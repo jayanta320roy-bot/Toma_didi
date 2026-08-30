@@ -1,0 +1,259 @@
+# 🎂 Birthday Website for My Elder Sister
+
+Save the following as **`index.html`**:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday Didi 🎂</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb);
+            min-height: 100vh;
+            overflow-x: hidden;
+            text-align: center;
+        }
+
+        .container {
+            padding: 40px 20px;
+        }
+
+        h1 {
+            font-size: 55px;
+            color: #fff;
+            text-shadow: 3px 3px 8px #9c276b;
+            animation: glow 2s infinite alternate;
+        }
+
+        h2 {
+            font-size: 32px;
+            color: #7a174e;
+            margin: 15px;
+        }
+
+        .date {
+            font-size: 22px;
+            color: white;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        .message {
+            max-width: 750px;
+            margin: 25px auto;
+            background: rgba(255,255,255,0.85);
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            font-size: 19px;
+            line-height: 1.7;
+            color: #4b244a;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 30px auto;
+        }
+
+        .gallery img {
+            width: 220px;
+            height: 260px;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 6px solid white;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+            transition: 0.4s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.08) rotate(2deg);
+        }
+
+        button {
+            background: #ff4081;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        button:hover {
+            background: #e91e63;
+            transform: scale(1.05);
+        }
+
+        .heart {
+            position: fixed;
+            bottom: -20px;
+            font-size: 25px;
+            animation: float 6s linear infinite;
+            pointer-events: none;
+        }
+
+        footer {
+            margin-top: 40px;
+            color: white;
+            font-size: 17px;
+            padding-bottom: 30px;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 3px 3px 8px #9c276b;
+            }
+            to {
+                text-shadow: 0 0 25px white, 0 0 40px #ff4081;
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-110vh);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🎂 Happy Birthday 🎂</h1>
+
+        <h2>To My Amazing Elder Sister ❤️</h2>
+
+        <div class="date">
+            31st August 🎉
+        </div>
+
+        <!-- Birthday Photos -->
+        <div class="gallery">
+
+            <img src="D:\JavaScript for geospatial Applications\WhatsApp Image 2026-08-30 at 20.03.56.jpeg" alt="My Sister">
+
+            <img src="D:\JavaScript for geospatial Applications\WhatsApp Image 2026-08-30 at 20.03.5622.jpeg" alt="Beautiful Memory">
+
+            <img src="D:\JavaScript for geospatial Applications\WhatsApp Image 2026-08-30 at 20.03.5766.jpeg" alt="Best Memory">
+
+        </div>
+
+        <!-- Birthday Message -->
+        <div class="message">
+
+            <p>
+                💖 Dear Didi,
+            </p>
+
+            <br>
+
+            <p>
+                On your special day, I just want to say how lucky
+                I am to have an amazing elder sister like you.
+            </p>
+
+            <p>
+                You have always been someone I can look up to,
+                learn from, and share countless memories with.
+            </p>
+
+            <p>
+                May your birthday be filled with happiness,
+                laughter, love and beautiful moments.
+            </p>
+
+            <br>
+
+            <p>
+                🌸 May all your dreams come true. 🌸
+            </p>
+
+            <p>
+                🎁 Wishing you a beautiful and successful year ahead!
+            </p>
+
+            <br>
+
+            <h2>❤️ Happy Birthday, Didi! ❤️</h2>
+
+        </div>
+
+        <!-- Music -->
+        <audio id="birthdayMusic" loop>
+            <source src="D:\JavaScript for geospatial Applications\प्यारी_बहन_के_लिए_जन्मदिन_शायरी_2025_🎂___Happy_Birthday_My_Dear_Sister___Sister_Birthday__Wishes(256k).mp3.mpeg" type="audio/mpeg">
+        </audio>
+
+        <button onclick="playMusic()">
+            🎵 Play Birthday Song
+        </button>
+
+        <footer>
+            Made with ❤️ especially for my wonderful elder sister.
+        </footer>
+
+    </div>
+
+    <script>
+
+        function playMusic() {
+            let music = document.getElementById("birthdayMusic");
+
+            if (music.paused) {
+                music.play();
+            } else {
+                music.pause();
+            }
+        }
+
+        // Floating hearts
+        function createHeart() {
+
+            const heart = document.createElement("div");
+
+            heart.className = "heart";
+
+            heart.innerHTML = "❤️";
+
+            heart.style.left =
+                Math.random() * 100 + "vw";
+
+            heart.style.animationDuration =
+                (Math.random() * 3 + 3) + "s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 6000);
+        }
+
+        setInterval(createHeart, 500);
+
+    </script>
+
+</body>
+</html>
+```
